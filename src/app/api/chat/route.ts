@@ -84,7 +84,7 @@ async function callExternalProvider(messages: ChatMessage[]): Promise<string> {
     process.env.AI_BASE_URL ??
     "https://generativelanguage.googleapis.com/v1beta/openai"
   ).replace(/\/+$/, "");
-  const model = process.env.AI_MODEL ?? "gemini-2.5-flash";
+ const model = process.env.AI_MODEL ?? "gemini-1.5-flash";
 
   if (!apiKey) {
     throw new Error("NO_API_KEY");
