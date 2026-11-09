@@ -1,0 +1,488 @@
+     1→/* ------------------------------------------------------------------ */
+     2→/* iRack IT Solutions — central content source                         */
+     3→/* All data sourced from the official Company Profile (V0.7, 2026)     */
+     4→/* ------------------------------------------------------------------ */
+     5→
+     6→export const SITE = {
+     7→  name: "iRack IT Solutions",
+     8→  shortName: "iRack",
+     9→  tagline: "Smart Solutions, Stronger Future",
+    10→  established: 2014,
+    11→  address: "Piyassa, Wastna Building 5th Floor, Office No. 501, Addis Ababa, Ethiopia",
+    12→  email: "info@iracktech.com",
+    13→  phone: "+251 111 704 557",
+    14→  phoneAlt: "+251 92 015 5779",
+    15→  phoneRaw: "+251111704557",
+    16→  hours: "Mon – Sat: 8:30 AM – 6:00 PM",
+    17→  copyright: "iRack IT Solutions — All rights reserved.",
+    18→};
+    19→
+    20→/* Company performance highlights (from profile) */
+    21→export const STATS = [
+    22→  { value: 12, suffix: "", label: "Years in the Market", description: "Delivering turnkey IT solutions since 2014" },
+    23→  { value: 100, suffix: "+", label: "Projects Completed", description: "End-to-end projects across every sector in Ethiopia" },
+    24→  { value: 70, suffix: "+", label: "Certified Professionals", description: "Engineers and experts certified across our solution areas" },
+    25→  { value: 40, suffix: "+", label: "Global Industry Partners", description: "Partnered with top global technology leaders" },
+    26→];
+    27→
+    28→export const ROTATING_WORDS = [
+    29→  "Data Centers",
+    30→  "Enterprise Networks",
+    31→  "Cyber Security",
+    32→  "Cloud Solutions",
+    33→  "Smart Infrastructure",
+    34→  "Software Solutions",
+    35→];
+    36→
+    37→/* ------------------------------------------------------------------ */
+    38→/* Mission · Vision · Core Values                                      */
+    39→/* ------------------------------------------------------------------ */
+    40→
+    41→export const VISION =
+    42→  "To become Ethiopia's most trusted and leading IT solution provider, empowering businesses through smart infrastructure, modern technology, and lasting partnerships.";
+    43→
+    44→export const MISSION =
+    45→  "To deliver innovative, reliable, and value-driven IT solutions by listening to our clients, understanding their needs, and using technology to drive their success.";
+    46→
+    47→export const CORE_VALUES = [
+    48→  { title: "Customer Focus", icon: "Users", text: "Listening to our clients and putting their needs at the center of every solution we deliver." },
+    49→  { title: "Integrity", icon: "ShieldCheck", text: "Operating transparently and honestly in every engagement, partnership and delivery." },
+    50→  { title: "Teamwork", icon: "Handshake", text: "Collaborating across disciplines — and with our clients — to achieve shared success." },
+    51→  { title: "Excellence", icon: "Award", text: "Pursuing the highest standards of quality in every design, installation and service." },
+    52→  { title: "Innovation", icon: "Lightbulb", text: "Continuously adopting modern technology to drive our clients' success forward." },
+    53→  { title: "Sustainability", icon: "Leaf", text: "Building durable, future-ready infrastructure that creates lasting value." },
+    54→];
+    55→
+    56→/* ------------------------------------------------------------------ */
+    57→/* Company journey timeline                                            */
+    58→/* ------------------------------------------------------------------ */
+    59→
+    60→export const STORY_MILESTONES = [
+    61→  {
+    62→    year: "2014",
+    63→    title: "The Beginning",
+    64→    text: "iRack IT Solutions was established in Addis Ababa, Ethiopia, starting as a hardware and network solution provider.",
+    65→  },
+    66→  {
+    67→    year: "2015",
+    68→    title: "Data Center Era",
+    69→    text: "Expanded into data center infrastructure — designing and building mission-critical facilities.",
+    70→  },
+    71→  {
+    72→    year: "2016",
+    73→    title: "Systems & Cloud",
+    74→    text: "Added systems integration, cloud and virtualization solutions to our portfolio.",
+    75→  },
+    76→  {
+    77→    year: "2017",
+    78→    title: "Cyber Security",
+    79→    text: "Launched dedicated cyber security practices — from firewalls to SIEM and VAPT.",
+    80→  },
+    81→  {
+    82→    year: "2018",
+    83→    title: "Certified Expertise",
+    84→    text: "Built a strong, multi-vendor certified team across all of our solution areas.",
+    85→  },
+    86→  {
+    87→    year: "2020",
+    88→    title: "Top IT Company",
+    89→    text: "Became one of the top IT companies in Ethiopia — trusted by government, BFSI and telecom.",
+    90→  },
+    91→  {
+    92→    year: "Today",
+    93→    title: "Digital Era Partner",
+    94→    text: "One of Ethiopia's leading IT solution providers, delivering smart solutions for a stronger future.",
+    95→  },
+    96→];
+    97→
+    98→/* ------------------------------------------------------------------ */
+    99→/* Annual turnover growth (from Company Performance, ETB)              */
+   100→/* ------------------------------------------------------------------ */
+   101→
+   102→export const REVENUE_GROWTH = {
+   103→  points: [
+   104→    { year: "2020/21", value: 65748255, label: "65.7M" },
+   105→    { year: "2021/22", value: 100969456, label: "101.0M" },
+   106→    { year: "2022/23", value: 189801341, label: "189.8M" },
+   107→    { year: "2023/24", value: 350688383, label: "350.7M" },
+   108→    { year: "2024/25", value: 527024426, label: "527.0M" },
+   109→  ],
+   110→  average: "246.8M ETB",
+   111→  growth: "+701.6%",
+   112→  multiple: "8.02x",
+   113→  cagr: "68.3%",
+   114→};
+   115→
+   116→/* ------------------------------------------------------------------ */
+   117→/* Solutions — six service lines from the company profile              */
+   118→/* ------------------------------------------------------------------ */
+   119→
+   120→export type Solution = {
+   121→  id: string;
+   122→  title: string;
+   123→  short: string;
+   124→  description: string;
+   125→  features: string[];
+   126→  icon: string;
+   127→  span?: "large" | "wide" | "normal";
+   128→};
+   129→
+   130→export const SOLUTIONS: Solution[] = [
+   131→  {
+   132→    id: "datacenter-power",
+   133→    title: "Data Center & Power Infrastructure",
+   134→    short:
+   135→      "Design, build and power mission-critical data centers — from modular rooms to full DCIM monitoring.",
+   136→    description:
+   137→      "We deliver complete turnkey data center solutions: consultancy and design, modular data center builds, UPS and power infrastructure, cooling and environmental control, rack and containment systems, fire detection and suppression, plus DCIM monitoring — everything your facility needs to run 24/7.",
+   138→    features: [
+   139→      "Data Center Design & Consultancy",
+   140→      "Modular Data Center Solutions",
+   141→      "UPS & Power Infrastructure",
+   142→      "Cooling & Environmental Control Systems",
+   143→      "Rack & Containment Systems",
+   144→      "Fire Detection & Suppression Systems",
+   145→      "Data Center Monitoring & DCIM Systems",
+   146→      "Structured Cabling & Network Infrastructure",
+   147→      "Physical Security & Access Control Systems",
+   148→    ],
+   149→    icon: "Server",
+   150→    span: "large",
+   151→  },
+   152→  {
+   153→    id: "enterprise-networking",
+   154→    title: "Enterprise Networking",
+   155→    short:
+   156→      "Design, implement and optimize LAN/WAN, wireless and fiber backbone networks for enterprises and campuses.",
+   157→    description:
+   158→      "Our networking specialists design and implement enterprise networks end-to-end: core, distribution and access switching, wireless LAN, structured cabling and fiber backbones, SD-WAN branch connectivity — with continuous monitoring and maintenance support.",
+   159→    features: [
+   160→      "LAN/WAN Network Design & Implementation",
+   161→      "Core, Distribution & Access Switching",
+   162→      "Wireless LAN & Wi-Fi Infrastructure",
+   163→      "Structured Cabling & Fiber Backbone",
+   164→      "SD-WAN & Branch Connectivity Solutions",
+   165→      "Network Monitoring & Performance Optimization",
+   166→      "Network Testing, Documentation & Maintenance",
+   167→    ],
+   168→    icon: "Network",
+   169→    span: "normal",
+   170→  },
+   171→  {
+   172→    id: "cyber-security",
+   173→    title: "Cyber Security Solutions",
+   174→    short:
+   175→      "Protect your organization from modern threats — from perimeter security to SIEM, IAM and VAPT.",
+   176→    description:
+   177→      "As threats grow more sophisticated, we secure your entire environment: firewalls and perimeter security, endpoint protection, email and web security, SIEM, identity and access management, vulnerability assessment and penetration testing, plus backup and disaster recovery.",
+   178→    features: [
+   179→      "Firewall & Perimeter Security",
+   180→      "Endpoint Protection & Antivirus",
+   181→      "Email & Web Security Solutions",
+   182→      "Security Information & Event Management (SIEM)",
+   183→      "Identity & Access Management (IAM)",
+   184→      "Vulnerability Assessment & Penetration Testing (VAPT)",
+   185→      "Data Protection, Backup & Disaster Recovery",
+   186→      "Security Monitoring, Incident Response & Support",
+   187→    ],
+   188→    icon: "ShieldCheck",
+   189→    span: "normal",
+   190→  },
+   191→  {
+   192→    id: "mdc-cloud",
+   193→    title: "Modern Data Center & Cloud",
+   194→    short:
+   195→      "Server, storage, virtualization and cloud solutions — including VDI and business continuity.",
+   196→    description:
+   197→      "We modernize your compute and storage estate: server infrastructure, storage and backup, virtualization, cloud migration, Microsoft/Linux administration, VDI and thin-client computing — with system monitoring and technical support to keep everything running.",
+   198→    features: [
+   199→      "Server Infrastructure Solutions",
+   200→      "Storage & Backup Solutions",
+   201→      "Virtualization Solutions",
+   202→      "Cloud Infrastructure & Migration Services",
+   203→      "Microsoft/Linux System Administration",
+   204→      "Data Backup, Recovery & Business Continuity",
+   205→      "VDI, Thin Client & Centralized Computing",
+   206→      "System Monitoring, Maintenance & Support",
+   207→    ],
+   208→    icon: "Cloud",
+   209→    span: "normal",
+   210→  },
+   211→  {
+   212→    id: "smart-infrastructure",
+   213→    title: "Smart City Infrastructure",
+   214→    short:
+   215→      "Smart meeting rooms, classrooms, buildings and public safety systems — connected and intelligent.",
+   216→    description:
+   217→      "From smart meeting rooms and classrooms to building management and public safety infrastructure, we integrate audio-visual, video conferencing, interactive displays and smart surveillance into intelligent environments — backed by full IT infrastructure support and preventive maintenance.",
+   218→    features: [
+   219→      "Smart Meeting Room Solutions",
+   220→      "Smart Classroom Solutions",
+   221→      "Smart Building Management Systems",
+   222→      "Audio-Visual & Video Conferencing",
+   223→      "Interactive Display & Collaboration Systems",
+   224→      "Smart Surveillance & Public Safety Infrastructure",
+   225→      "IT Infrastructure Support & Maintenance",
+   226→      "Network Support & Preventive Maintenance",
+   227→    ],
+   228→    icon: "Building2",
+   229→    span: "normal",
+   230→  },
+   231→  {
+   232→    id: "software-solutions",
+   233→    title: "Software Solutions",
+   234→    short:
+   235→      "Custom web, mobile and enterprise software — designed, integrated and supported by expert developers.",
+   236→    description:
+   237→      "Our software team builds what your business needs: custom web and mobile applications, enterprise software, UI/UX design, API and system integration, database design, business intelligence and automation — with long-term maintenance and enhancement.",
+   238→    features: [
+   239→      "Custom Web Application Development",
+   240→      "Mobile Application Development",
+   241→      "Enterprise Software Development",
+   242→      "UI/UX Design & Front-End Development",
+   243→      "API Integration & System Integration",
+   244→      "Database Design & Management",
+   245→      "Business Intelligence & Automation",
+   246→      "Software Maintenance, Support & Enhancement",
+   247→    ],
+   248→    icon: "Code2",
+   249→    span: "normal",
+   250→  },
+   251→];
+   252→
+   253→/* Our delivery workflow: Consult → Design → Supply → Install → Commission */
+   254→export const SERVICE_WORKFLOW = [
+   255→  { step: "01", title: "Consult", text: "We listen and assess your needs, then advise the best-fit approach." },
+   256→  { step: "02", title: "Design", text: "Our engineers design a complete, standards-based solution blueprint." },
+   257→  { step: "03", title: "Supply", text: "Through top global partners, we source quality equipment and software." },
+   258→  { step: "04", title: "Install", text: "Certified teams install and integrate everything — on site, on time." },
+   259→  { step: "05", title: "Commission", text: "We test, commission, train your staff and support you long-term." },
+   260→];
+   261→
+   262→/* ------------------------------------------------------------------ */
+   263→/* Leadership team (from profile)                                      */
+   264→/* ------------------------------------------------------------------ */
+   265→
+   266→export type Leader = {
+   267→  name: string;
+   268→  role: string;
+   269→  photo: string;
+   270→};
+   271→
+   272→export const LEADERS: Leader[] = [
+   273→  { name: "Zenagebriel Fekadu", role: "Chief Operating Officer", photo: "/images/leaders/zenagebriel-fekadu.png" },
+   274→  { name: "Sintayehu Getachew", role: "Project Coordinator", photo: "/images/leaders/sintayehu-getachew.png" },
+   275→  { name: "Abrham Yeshingda", role: "Chief Business Development Manager", photo: "/images/leaders/abrham-yeshingda.png" },
+   276→  { name: "Arsema Tadesse", role: "Pre-Sales Manager", photo: "/images/leaders/arsema-tadesse.png" },
+   277→];
+   278→
+   279→export const TEAMS = [
+   280→  {
+   281→    id: "operations",
+   282→    title: "Operations Team",
+   283→    icon: "Wrench",
+   284→    photo: "/images/team-operations.png",
+   285→    description:
+   286→      "Our operations team delivers on the ground: infrastructure deployment, network and security installation, data center build-outs, commissioning and after-sales support — coordinated by our project office with training management included.",
+   287→  },
+   288→  {
+   289→    id: "business-dev",
+   290→    title: "Business Development Team",
+   291→    icon: "Handshake",
+   292→    photo: "/images/team-bizdev.png",
+   293→    description:
+   294→      "Our business development team covers pre-sales engineering, sales and marketing, channel management and solution development — organized to serve public sectors, BFSI, multinational and telecom clients across Ethiopia.",
+   295→  },
+   296→  {
+   297→    id: "technical",
+   298→    title: "Technical Experts",
+   299→    icon: "Cpu",
+   300→    photo: "/images/team-main.png",
+   301→    description:
+   302→      "70+ certified professionals across data center & power, enterprise networking, cyber security, modern data center & cloud, smart infrastructure and software solutions — certified by the world's leading technology vendors.",
+   303→  },
+   304→];
+   305→
+   306→/* ------------------------------------------------------------------ */
+   307→/* Completed project portfolio (from profile)                          */
+   308→/* ------------------------------------------------------------------ */
+   309→
+   310→export type Project = {
+   311→  id: number;
+   312→  title: string;
+   313→  client: string;
+   314→  year: number;
+   315→  size: string;
+   316→  region: string;
+   317→  category: string;
+   318→};
+   319→
+   320→export const PROJECT_CATEGORIES = [
+   321→  { id: "all", label: "All Projects" },
+   322→  { id: "datacenter", label: "Data Center & Power" },
+   323→  { id: "networking", label: "Enterprise Networking" },
+   324→  { id: "security", label: "Cyber Security" },
+   325→  { id: "cloud", label: "Cloud & Virtualization" },
+   326→  { id: "smart", label: "Smart Infrastructure" },
+   327→  { id: "supply", label: "IT Supply & Support" },
+   328→] as const;
+   329→
+   330→export const PROJECTS: Project[] = [
+   331→  { id: 1, title: "Information systems design, supply, rehabilitation and commissioning of the existing data center", client: "Ministry of Water and Energy", year: 2026, size: "510M ETB", region: "Addis Ababa", category: "datacenter" },
+   332→  { id: 2, title: "Supply, installation, commissioning, training and testing of modular data center, enterprise network infrastructure, cyber security, IP phone and video surveillance system", client: "FDRE Defense Ministry", year: 2023, size: "108.5M ETB", region: "Addis Ababa", category: "datacenter" },
+   333→  { id: 3, title: "Supply and installation, commissioning, training of hyper-converged infrastructure, storage and 410 virtual desktop infrastructure (VDI)", client: "Wachamo University", year: 2024, size: "90.6M ETB", region: "South West Ethiopia", category: "cloud" },
+   334→  { id: 4, title: "Setting up STEM education and innovation centers, including supply of equipment, devices and mentoring — at Gelan Boys and Etege Menen Girls boarding schools", client: "Addis Ababa City Education Bureau", year: 2026, size: "250M ETB", region: "Addis Ababa", category: "smart" },
+   335→  { id: 5, title: "Supply, installation, configuration and implementation of enterprise network and related infrastructure", client: "Debre Markos University", year: 2026, size: "174.6M ETB", region: "Amhara", category: "networking" },
+   336→  { id: 6, title: "Supply, design, installation, testing and commissioning of network infrastructure, video surveillance system (VSS), data center and video conference room", client: "Addis Ababa ITDB", year: 2026, size: "148.9M ETB", region: "Addis Ababa", category: "networking" },
+   337→  { id: 7, title: "Supply and installation of electronics maintenance materials, IT spare parts, security devices and firewall", client: "Addis Ababa ITDB", year: 2025, size: "179.4M ETB", region: "Addis Ababa", category: "supply" },
+   338→  { id: 8, title: "Supply, installation, configuration and testing of storage with SAN switch", client: "City Government of Addis Ababa Education Bureau", year: 2025, size: "74M ETB", region: "Addis Ababa", category: "cloud" },
+   339→  { id: 9, title: "Supply, installation and commissioning of data backup and storage related hardware and system software for the Ethiopia e-government procurement (e-GP) system", client: "Ministry of Finance", year: 2025, size: "98M ETB", region: "Addis Ababa", category: "cloud" },
+   340→  { id: 10, title: "Design, supply, installation and commissioning of situation room at HQ", client: "Ministry of Defense", year: 2026, size: "74M ETB", region: "Addis Ababa", category: "smart" },
+   341→  { id: 11, title: "Procurement of digital signage (outdoor screen) with delivery and installation of digital market promotion system", client: "Ministry of Trade and Regional Integration", year: 2026, size: "38.4M ETB", region: "Addis Ababa", category: "smart" },
+   342→  { id: 12, title: "Supply and installation of 100GB firewall, IP camera and NAS storage", client: "Addis Ababa ITDB", year: 2025, size: "35M ETB", region: "Addis Ababa", category: "security" },
+   343→  { id: 13, title: "Supply and installation of network infrastructure", client: "Ethiopian News Agency", year: 2025, size: "13M ETB", region: "Addis Ababa", category: "networking" },
+   344→  { id: 14, title: "Design, supply, installation and commissioning of CCTV cameras", client: "EKA Kotebe Hospital", year: 2026, size: "25M ETB", region: "Addis Ababa", category: "security" },
+   345→  { id: 15, title: "Supply, construction and installation of data center infrastructure", client: "Ministry of Trade", year: 2024, size: "25M ETB", region: "Addis Ababa", category: "datacenter" },
+   346→  { id: 16, title: "Design, supply, installation and commissioning of fire prevention and protection system at HQ", client: "Ethio Telecom", year: 2026, size: "25M ETB", region: "Addis Ababa", category: "datacenter" },
+   347→  { id: 17, title: "Supply & integration of devices, including workstations and audio system for training center", client: "Ethiopian Statistics Service", year: 2025, size: "24M ETB", region: "Addis Ababa", category: "supply" },
+   348→  { id: 18, title: "Supply, installation, configuration, testing, commissioning and training of IP CCTV system", client: "Federal Housing Corporation", year: 2026, size: "24M ETB", region: "Addis Ababa", category: "security" },
+   349→  { id: 19, title: "Supply of building information modeling (BIM) capable desktop computers, hardware, UPS, server and 42U rack equipment", client: "ECWC", year: 2016, size: "25.3M ETB", region: "Addis Ababa", category: "supply" },
+   350→  { id: 20, title: "Design, supply, installation and commissioning of outdoor and indoor LED screens", client: "CRRSA", year: 2026, size: "15.9M ETB", region: "Addis Ababa", category: "smart" },
+   351→  { id: 21, title: "Design, supply, installation and commissioning of network infrastructure", client: "National Archive and Library Agency", year: 2024, size: "15M ETB", region: "Addis Ababa", category: "networking" },
+   352→  { id: 22, title: "Supply and installation of smart meeting room with video conference system", client: "Mekdela Amba University", year: 2022, size: "12.3M ETB", region: "Amhara", category: "smart" },
+   353→  { id: 23, title: "Installation of network devices, video conference, cabling and trunking", client: "FDRE Defense Ministry", year: 2023, size: "90.6M ETB", region: "Addis Ababa", category: "networking" },
+   354→  { id: 24, title: "Design, supply, installation and commissioning of video conference room", client: "Institute of Foreign Affairs", year: 2023, size: "5.9M ETB", region: "Addis Ababa", category: "smart" },
+   355→  { id: 25, title: "Supply of network related materials", client: "Office of the Prime Minister", year: 2024, size: "5.5M ETB", region: "Addis Ababa", category: "supply" },
+   356→  { id: 26, title: "Supply and deployment of antivirus", client: "Institute of Foreign Affairs", year: 2023, size: "4.5M ETB", region: "Addis Ababa", category: "security" },
+   357→  { id: 27, title: "Design, supply and installation of CCTV cameras and related materials", client: "Addis Ababa Public Service & HR Development Bureau", year: 2023, size: "2.1M ETB", region: "Addis Ababa", category: "security" },
+   358→];
+   359→
+   360→/* ------------------------------------------------------------------ */
+   361→/* Market segments (from profile)                                      */
+   362→/* ------------------------------------------------------------------ */
+   363→
+   364→export const MARKETS = [
+   365→  {
+   366→    title: "Public Sectors",
+   367→    description:
+   368→      "Ministries, agencies, universities and city administrations across Ethiopia rely on iRack for secure, large-scale technology foundations.",
+   369→    icon: "Landmark",
+   370→    examples: ["Ministry of Water & Energy", "Ministry of Finance", "Addis Ababa ITDB"],
+   371→  },
+   372→  {
+   373→    title: "Banking, Financial Services & Insurance (BFSI)",
+   374→    description:
+   375→      "Mission-critical infrastructure, cyber security and business continuity for Ethiopia's financial institutions.",
+   376→    icon: "Landmark",
+   377→    examples: ["Banks", "Insurance Companies", "Financial Regulators"],
+   378→  },
+   379→  {
+   380→    title: "Multinational & Telecom",
+   381→    description:
+   382→      "Enterprise networks, smart facilities and managed services for telecom operators and multinational organizations.",
+   383→    icon: "RadioTower",
+   384→    examples: ["Ethio Telecom", "Multinational Offices", "Enterprise Campuses"],
+   385→  },
+   386→];
+   387→
+   388→/* ------------------------------------------------------------------ */
+   389→/* Client logos (extracted from the company profile)                   */
+   390→/* ------------------------------------------------------------------ */
+   391→
+   392→export const CLIENT_LOGOS = [
+   393→  { name: "Ethiopian Electric Power", src: "/images/clients/eep.png" },
+   394→  { name: "Ministry of Water and Energy", src: "/images/clients/mowe.png" },
+   395→  { name: "Ethio Telecom", src: "/images/clients/ethio-telecom.png" },
+   396→  { name: "Ministry of Finance", src: "/images/clients/mof.png" },
+   397→  { name: "FDRE Defense Ministry", src: "/images/clients/defense.png" },
+   398→  { name: "Ministry of Foreign Affairs", src: "/images/clients/foreign-affairs.png" },
+   399→  { name: "Ministry of Health", src: "/images/clients/moh.png" },
+   400→  { name: "Federal Supreme Court", src: "/images/clients/supreme-court.png" },
+   401→  { name: "Federal Ethics & Anti-Corruption Commission", src: "/images/clients/feacc.png" },
+   402→  { name: "Office of the Federal Auditor General", src: "/images/clients/auditor-general.png" },
+   403→  { name: "Customs Commission", src: "/images/clients/customs.png" },
+   404→  { name: "Federal Housing Corporation", src: "/images/clients/federal-housing.png" },
+   405→  { name: "Ethiopian Construction Works Corporation", src: "/images/clients/ecwc.png" },
+   406→  { name: "Addis Ababa City Roads Authority", src: "/images/clients/roads-authority.png" },
+   407→  { name: "Ministry of Trade", src: "/images/clients/mot.png" },
+   408→  { name: "Ethiopian News Agency", src: "/images/clients/ministry.png" },
+   409→];
+   410→
+   411→/* ------------------------------------------------------------------ */
+   412→/* Industry partner logos (extracted from the company profile)         */
+   413→/* ------------------------------------------------------------------ */
+   414→
+   415→export const PARTNER_LOGOS = [
+   416→  { name: "Dell", src: "/images/partners-grid.png", direct: false },
+   417→];
+   418→
+   419→export const PARTNERS = [
+   420→  { name: "Dell", tagline: "Computing", src: null },
+   421→  { name: "HP", tagline: "Enterprise IT", src: null },
+   422→  { name: "Cisco", tagline: "Networking", src: null },
+   423→  { name: "Microsoft", tagline: "Software & Cloud", src: null },
+   424→  { name: "Huawei", tagline: "ICT Infrastructure", src: null },
+   425→  { name: "Oracle", tagline: "Database & Applications", src: "/images/partners/oracle.png" },
+   426→  { name: "SAP", tagline: "Enterprise Software", src: "/images/partners/sap.png" },
+   427→  { name: "Palo Alto Networks", tagline: "Network Security", src: "/images/partners/palo-alto.png" },
+   428→  { name: "Kaspersky", tagline: "Cyber Security", src: "/images/partners/kaspersky.png" },
+   429→  { name: "CyberArk", tagline: "Identity Security", src: "/images/partners/cyberark.png" },
+   430→  { name: "Red Hat", tagline: "Open Source", src: "/images/partners/redhat.png" },
+   431→  { name: "Veeam", tagline: "Backup & Recovery", src: "/images/partners/veeam.png" },
+   432→  { name: "APC by Schneider Electric", tagline: "Power & Cooling", src: "/images/partners/apc.png" },
+   433→  { name: "Vertiv", tagline: "Critical Infrastructure", src: null },
+   434→  { name: "Canon", tagline: "Imaging & Printing", src: "/images/partners/canon.png" },
+   435→  { name: "Hitachi", tagline: "Technology", src: "/images/partners/hitachi.png" },
+   436→  { name: "Nutanix", tagline: "Hyperconverged", src: null },
+   437→  { name: "Omnissa", tagline: "Digital Workspace", src: "/images/partners/omnissa.png" },
+   438→  { name: "Avaya", tagline: "Communications", src: "/images/partners/avaya.png" },
+   439→  { name: "SolarWinds", tagline: "IT Management", src: "/images/partners/solarwinds.png" },
+   440→  { name: "ZKTeco", tagline: "Access Control", src: "/images/partners/zkteco.png" },
+   441→  { name: "Absen", tagline: "LED Displays", src: "/images/partners/absen.png" },
+   442→  { name: "Hikvision", tagline: "Video Surveillance", src: null },
+   443→  { name: "Dahua", tagline: "Video Surveillance", src: null },
+   444→];
+   445→
+   446→export const PARTNERS_GRID_IMAGE = "/images/partners-grid.png";
+   447→
+   448→/* ------------------------------------------------------------------ */
+   449→/* Why us                                                              */
+   450→/* ------------------------------------------------------------------ */
+   451→
+   452→export const WHY_US = [
+   453→  {
+   454→    title: "12 Years of Proven Delivery",
+   455→    text: "Since 2014, iRack has completed 100+ projects for Ethiopia's most demanding government, education, financial and telecom clients.",
+   456→    icon: "Award",
+   457→  },
+   458→  {
+   459→    title: "70+ Certified Professionals",
+   460→    text: "A strong, multi-vendor certified team across data center, networking, security, cloud, smart infrastructure and software disciplines.",
+   461→    icon: "BadgeCheck",
+   462→  },
+   463→  {
+   464→    title: "Turnkey: Consult to Commission",
+   465→    text: "One partner for the full lifecycle — consult, design, supply, install and commission — with training and after-sales support included.",
+   466→    icon: "Layers",
+   467→  },
+   468→  {
+   469→    title: "Top Global Industry Leaders",
+   470→    text: "40+ partnerships with the world's leading technology vendors — Dell, Cisco, Microsoft, Oracle, Palo Alto, Vertiv, Canon and more.",
+   471→    icon: "Globe",
+   472→  },
+   473→];
+   474→
+   475→/* ------------------------------------------------------------------ */
+   476→/* Navigation                                                          */
+   477→/* ------------------------------------------------------------------ */
+   478→
+   479→export const NAV_LINKS = [
+   480→  { label: "Home", href: "#home" },
+   481→  { label: "About", href: "#about" },
+   482→  { label: "Solutions", href: "#solutions" },
+   483→  { label: "Projects", href: "#projects" },
+   484→  { label: "Team", href: "#team" },
+   485→  { label: "Clients", href: "#clients" },
+   486→  { label: "Contact", href: "#contact" },
+   487→];
+   488→
