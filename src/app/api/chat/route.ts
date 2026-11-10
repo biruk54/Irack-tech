@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
 
     const apiKey = process.env.AI_API_KEY;
     const baseUrl = "https://generativelanguage.googleapis.com/v1beta/openai";
-    const model = process.env.AI_MODEL || "gemini-2.0-flash";
+    const model = process.env.AI_MODEL || "gemini-1.5-flash";
 
     if (!apiKey) {
       return NextResponse.json(
