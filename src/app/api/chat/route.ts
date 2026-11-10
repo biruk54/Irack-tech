@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export async function POST(req: NextRequest) {
   try {
@@ -13,7 +13,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const ai = new GoogleGenAI({ apiKey });
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const modelName = process.env.AI_MODEL || "gemini-1.5-flash";
 
     const systemInstruction = `You are "RackAI", the friendly AI assistant for iRack IT Solutions, an Ethiopian IT company.
 Location: Piyassa, Wastna Building 5th Floor, Office 501, Addis Ababa, Ethiopia.
@@ -21,27 +22,27 @@ Email: info@iracktech.com | Phones: +251 111 704 557 / +251 92 015 5779
 Services: Data Center & Power Infrastructure, Enterprise Networking, Cyber Security, Modern Data Center & Cloud, Smart City Infrastructure, Software Solutions.
 Be warm, concise, and helpful.`;
 
-    // Extract the latest user prompt from the messages array
-    const lastUserMessage = messages?.slice().reverse().find((m: any) => m.role === "user")?.content || "Hello";
-
-    const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
-      contents: lastUserMessage,
-      config: {
-        systemInstruction,
-        temperature: 0.4,
-      },
+    const model = genAI.getGenerativeModel({
+      model: modelName,
+      systemInstruction: systemInstruction,
     });
 
-    const reply = response.text;
+    const lastUserMessage =
+      messages?.slice().reverse().find((m: any) => m.role === "user")?.content || "Hello";
+
+    const result = await model.generateContent(lastUserMessage);
+    const reply = result.response.text();
 
     if (!reply) {
-      return NextResponse.json({ error: "Empty response from Gemini." }, { status: 500 });
+      return NextResponse.json(
+        { error: "Empty response received from Gemini." },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json({ reply, message: reply });
   } catch (err: any) {
-    console.error("Gemini Native SDK Error:", err);
+    console.error("Gemini SDK Error:", err);
     return NextResponse.json(
       { error: err.message || "Failed to process chat request." },
       { status: 500 }
